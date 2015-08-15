@@ -1,7 +1,7 @@
 # AutobahnJS.SignaR
 A SignalR transport for AutobahnJS, supported by a WampSharp router.
 
-=== Usage ===
+### Usage
 
 ```TypeScript
 var transportName = "SignalR-longPolling";
