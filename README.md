@@ -35,3 +35,33 @@ connection.onopen = session => {
 
 connection.open();
 ```
+
+Server-side:
+```csharp
+{
+    IWampHost host = new WampHost();
+
+    host.RegisterTransport(new SignalRTransport("http://localhost:7070/", "/signalr"),
+                           new JTokenJsonBinding());
+
+    IWampHostedRealm realm = host.RealmContainer.GetRealmByName("realm1");
+
+    realm.Services.RegisterCallee(new AddService());
+
+    host.Open();
+}
+
+public interface IAddService
+{
+    [WampProcedure("com.myapp.add2")]
+    int Add2(int x, int y);
+}
+
+private class AddService : IAddService
+{
+    public int Add2(int x, int y)
+    {
+        return x + y;
+    }
+}
+```
