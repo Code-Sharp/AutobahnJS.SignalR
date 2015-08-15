@@ -1,4 +1,4 @@
-# AutobahnJS.SignaR
+# AutobahnJS.SignalR
 A SignalR transport for AutobahnJS, supported by a WampSharp router.
 
 ### Usage
