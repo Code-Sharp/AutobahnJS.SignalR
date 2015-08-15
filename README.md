@@ -29,8 +29,7 @@ connection.onopen = session => {
     session.call<number>('com.myapp.add2', [2, 3]).then(
         res => {
             console.log("Result:", res);
-        }
-        );
+        });
 };
 
 connection.open();
